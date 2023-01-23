@@ -1,8 +1,3 @@
-lunch main to play at the game
+# donjon-master
 
-you need  to pip install pygame,pyscroll,pytmx
-
-the game it's like pokemon but like a donjon
-
-
-enjoy 🤩🤩🤩🤩🤩🤩🤩🤩
+Ce dépôt GitHub est un jeu de donjon écrit en Python qui s'inspire de la série de jeux vidéo Pokémon et de la série de jeux vidéo Zelda. Il utilise la bibliothèque Pygame pour créer une interface graphique et propose une expérience de jeu immersive avec des combats de monstres, des quêtes et des objets à collecter. Les joueurs peuvent explorer des donjons aléatoires générés procéduralement, combattre des ennemis pour gagner de l'expérience et améliorer leurs compétences, et découvrir des trésors cachés. Ce jeu est un projet open-source, et les contributeurs sont les bienvenus pour ajouter des fonctionnalités et corriger des bugs.
