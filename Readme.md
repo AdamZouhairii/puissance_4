@@ -1,8 +1,6 @@
- # donjon-master  !![demon](https://user-images.githubusercontent.com/97172783/214098130-daa58c52-06d8-4adf-adaa-18ee93bd91eb.png)
+ # puissance ![AffektNumber4GIF](https://user-images.githubusercontent.com/97172783/221923204-b0f087d9-2e2f-4398-b175-5ff79fdf5949.gif)
+![AffektNumber4GIF (2)](https://user-images.githubusercontent.com/97172783/221923206-9f901b5a-52e6-44de-9d8a-23e69d01b8cf.gif)
+ ![sui](https://user-images.githubusercontent.com/97172783/221923113-b04abbc9-a511-4da6-a542-6c7b562b0cc3.png)
 
 
-Ce dépôt GitHub est un jeu de donjon écrit en Python qui s'inspire de la série de jeux vidéo Pokémon et de la série de jeux vidéo Zelda.
-Il utilise la bibliothèque Pygame pour créer une interface graphique et propose une expérience de jeu immersive avec des combats de monstres, des quêtes et des objets à collecter.
-Les joueurs peuvent explorer les donjons qu'il souhaite , combattre des ennemis pour gagner de l'expérience et améliorer leurs compétences, et découvrir des trésors cachés.
-Ce jeu est un projet open-source, et les contributeurs sont les bienvenus pour ajouter des fonctionnalités et corriger des bugs.
-(pour l'instant il y a que la premiere map )
+ 
