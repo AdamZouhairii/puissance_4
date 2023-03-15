@@ -12,31 +12,55 @@ from bot import*
 
 
 def create_model():
-    model = Sequential()
-    model.add(Dense(128, input_dim=42, activation='relu'))
+    #Un réseau de neurones séquentiel est un type de réseau de neurones artificiels qui est constitué de couches empilées les unes sur les autres.
+    model = Sequential() #Chaque couche est connectée à la précédente et à la suivante. Il est appelé "séquentiel" car les données circulent dans le réseau dans un ordre séquentiel
+    '''ici on ajoute une couche dense au réseau de neurones. 
+    Une couche dense est une couche de neurones entièrement connectée, 
+    où chaque neurone est connecté à chaque neurone de la couche précédente. 
+    Cette couche a 128 neurones et une dimension d'entrée de 42. 
+    L'activation est définie comme "relu", qui signifie "rectified linear unit
+    '''
+    model.add(Dense(128, input_dim=42, activation='relu')) 
     model.add(Dense(256, activation='relu'))
     model.add(Dense(128, activation='relu'))
-    model.add(Dense(7, activation='softmax'))
+    model.add(Dense(7, activation='softmax'))#L'activation est définie comme "softmax", qui est une fonction qui normalise les valeurs de sortie pour que leur somme soit égale à 1, ce qui permet de les interpréter comme des probabilités
+    '''ici on compile le modèle en utilisant la fonction de perte "categorical_crossentropy", l'optimiseur "adam" et la métrique d'évaluation "accuracy".
+      La fonction de perte mesure la différence entre les valeurs prédites et les valeurs réelles,
+        et l'optimiseur est utilisé pour ajuster les poids du modèle en fonction de la fonction de perte. 
+    La métrique d'évaluation "accuracy" mesure la précision du modèle sur les données d'entraînement.'''
     model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
     return model
 
-
+'''Si le nombre aléatoire est supérieur à la valeur d'exploration epsilon, la fonction utilise le modèle de réseau de neurones pour choisir la meilleure colonne. 
+         Tout d'abord, la fonction "np.reshape" est utilisée pour transformer le plateau de jeu en un tableau 1D de longueur 128, 
+         ce qui correspond à la taille d'entrée attendue par le modèle de réseau de neurones.
+           Les sorties du modèle sont calculées en appelant la méthode "predict" du modèle. 
+           Les sorties sont ensuite filtrées en utilisant les positions valides renvoyées par la fonction "get_valid_locations".
+        '''
+''' Une variable "mask" est créée en initialisant tous les éléments à 1.
+          Puis la valeur "0" est assignée aux positions invalides de la variable "mask".
+          Finalement, les sorties sont multipliées par la variable "mask" pour annuler les sorties invalides. 
+         La colonne avec la plus grande sortie est choisie en utilisant la fonction "np.argmax".
+         '''
 def get_model_move(board, model, epsilon):
+             
     if np.random.rand() < epsilon:
         # exploration : choisit une colonne au hasard
         col = np.random.randint(0, 7)
         while not is_valid_location(board, col):
             col = np.random.randint(0, 7)
     else:
-        # exploitation : utilise le réseau de neurones pour choisir la meilleure colonne
-        inputs = np.reshape(board, (1, 128))
+ 
+        inputs = np.reshape(board, (1, 128))   # np.reshape permet de transformer le plateau de jeu en un tableau 1D de longueur 128, 
+    # correspondant à la taille d'entrée attendue par le modèle de réseau de neurones
         outputs = model.predict(inputs)
         valid_moves = get_valid_locations(board)
-        mask = np.ones(outputs.shape)
+        mask = np.ones(outputs.shape) # On crée une matrice de la même taille que les sorties du modèle, remplie de 1
         mask[0][np.logical_not(valid_moves)] = 0
         outputs *= mask
         col = np.argmax(outputs)
     return col
+ 
 
 
 def get_best_move(board, nn, turn):
