@@ -51,7 +51,7 @@ def get_model_move(board, model, epsilon):
             col = np.random.randint(0, 7)
     else:
  
-        inputs = np.reshape(board, (1, 128))   # np.reshape permet de transformer le plateau de jeu en un tableau 1D de longueur 128, 
+        inputs = np.reshape(board, (1, 42))   # np.reshape permet de transformer le plateau de jeu en un tableau 1D de longueur 42, 
     # correspondant à la taille d'entrée attendue par le modèle de réseau de neurones
         outputs = model.predict(inputs)
         valid_moves = get_valid_locations(board)
