@@ -1,6 +1,6 @@
  # Puissance 4️⃣ ![sui](https://user-images.githubusercontent.com/97172783/221924842-97e2c635-eca3-42ed-91c0-2a813a5fc176.png)
 
-### installer les package tensorflow,pygame,keras et
+### installer les package tensorflow,pygame,keras et numpy
 
  
 Il s'agit d'une implémentation du jeu Puissance 4 avec trois modes de jeu : joueur contre joueur, joueur contre bot et joueur contre IA. L'IA est construite à l'aide de TensorFlow et de couches de neurones.
@@ -12,7 +12,7 @@ Le réseau neuronal dans le bot de l'IA possède plusieurs couches de neurones e
 Cette implémentation comprend également le nombre d'itérations d'entraînement utilisées pour former le réseau neuronal.
 
 
-## Pour lancer le jeu executer le fichier main
+## Pour lancer le jeu executer le fichier main dans le dossier puissance 4
 
 
  
