@@ -12,6 +12,9 @@ Le réseau neuronal dans le bot de l'IA possède plusieurs couches de neurones e
 Cette implémentation comprend également le nombre d'itérations d'entraînement utilisées pour former le réseau neuronal.
 
 
+## Pour lancer le jeu executer le fichier main
+
+
  
 
 
